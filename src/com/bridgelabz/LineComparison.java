@@ -2,18 +2,6 @@ package com.bridgelabz;
 import java.util.Scanner;
 // calculate lenght
 public class LineComparison {
-        //Method For Checking Lines Are Equal are not
-        static void equals(Integer lenght1, Integer lenght2)
-        {
-
-            boolean result = lenght1.equals(lenght2);
-
-            if (result ==true)
-                System.out.println("Length of lines is Equal");
-            else
-                System.out.println("Lines are not equals...");
-        }
-
         public static void main(String[] args) {
 
             Scanner sc = new Scanner(System.in);
@@ -47,9 +35,13 @@ public class LineComparison {
             //printing Both lines
             System.out.println("Length of 1st line is : " + length1);
             System.out.println("Length of second line is : " + length2);
-
-            //Calling Equal Method
-            equals(length1, length2);
+            // Compare the lengths of the lines using the compareTo method
+            if (Double.compare(length1, length2) == 0) {
+                System.out.println("The two lines are equal in length.");
+            } else if (Double.compare(length1, length2) < 0) {
+                System.out.println("The first line is shorter than the second line.");
+            } else {
+                System.out.println("The first line is longer than the second line.");
+            }
         }
-
     }
